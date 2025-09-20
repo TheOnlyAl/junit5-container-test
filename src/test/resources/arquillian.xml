@@ -12,7 +12,6 @@
 	</extension>
 
 	<extension qualifier="docker">
-		<property name="serverUri">http://localhost:2375</property>
 		<property name="definitionFormat">CUBE</property>
 		<property name="dockerContainersFile">src/test/docker/arquillian-cube.yml</property>
 	</extension>
