@@ -1,0 +1,4 @@
+create-jdbc-connection-pool --datasourceclassname=org.postgresql.ds.PGSimpleDataSource --restype=javax.sql.DataSource --property user=postgres:password=password:url="jdbc:postgresql://postgres:5432/postgres" PostgreSQLPool
+
+# Create the JDBC resource:
+create-jdbc-resource --connectionpoolid PostgreSQLPool jdbc/postgresql

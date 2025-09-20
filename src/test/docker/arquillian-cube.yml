@@ -1,0 +1,39 @@
+payara*:
+  buildImage:
+    dockerfileLocation: src/test/resources/payara
+    noCache: true
+    remove: true
+  portBindings:
+  - 4848/tcp
+  - 8080/tcp
+  networkMode: testnetwork*
+  hostName: payara
+  await:
+    strategy: log
+    match: 'Network Listener admin-listener started'
+    stdOut: true
+    stdErr: true
+    timeout: 120
+  dependsOn:
+  - postgres*
+  links:
+  - postgres*
+
+postgres*:
+  image: postgres:13
+  exposedPorts:
+  - 5432/tcp
+  networkMode: testnetwork*
+  hostName: postgres  
+  await:
+    strategy: log
+    match: 'database system is ready to accept connections'
+    stdOut: true
+    stdErr: true
+    timeout: 120
+  env:
+  - POSTGRES_PASSWORD=password
+  
+networks: 
+  testnetwork*:
+    driver: bridge
