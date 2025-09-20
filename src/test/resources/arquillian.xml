@@ -7,7 +7,7 @@
 	<defaultProtocol type="Servlet 6.0" />
 
 	<extension qualifier="cube">
-		<property name="connectionMode">STARTORCONNECTANDLEAVE</property>
+		<property name="connectionMode">STARTANDSTOP</property>
 		<property name="clean">true</property>
 	</extension>
 

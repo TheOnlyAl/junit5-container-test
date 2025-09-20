@@ -2,11 +2,16 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>de.theonlyal.arquillian</groupId>
 	<artifactId>junit5-container-test</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 
 	<properties>
+		<!--Plugins-->
+		<version.maven-compiler-plugin>3.13.0</version.maven-compiler-plugin>
+		<version.maven-dependency-plugin>3.6.1</version.maven-dependency-plugin>
+
 		<version.jdk>17</version.jdk>
 
 		<version.jakartaee>10.0.0</version.jakartaee>
@@ -20,6 +25,8 @@
 
 		<version.org.junit>5.13.4</version.org.junit>
 		<version.postgresql.jdbc>42.7.7</version.postgresql.jdbc>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<build>
@@ -27,7 +34,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.13.0</version>
+				<version>${version.maven-compiler-plugin}</version>
 				<configuration>
 					<source>${version.jdk}</source>
 					<target>${version.jdk}</target>
@@ -36,7 +43,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.6.1</version>
+				<version>${version.maven-dependency-plugin}</version>
 				<executions>
 					<execution>
 						<id>copy</id>
@@ -87,7 +94,7 @@
 			<dependency>
 				<groupId>org.jboss.shrinkwrap.resolver</groupId>
 				<artifactId>shrinkwrap-resolver-bom</artifactId>
-				<version>3.2.1</version>
+				<version>${version.shrinkwrap.resolver}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
