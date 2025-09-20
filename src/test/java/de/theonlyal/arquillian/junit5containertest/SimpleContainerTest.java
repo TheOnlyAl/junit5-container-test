@@ -29,8 +29,4 @@ public class SimpleContainerTest {
 	@UsingDataSet
 	public void testSeeding() {
 	}
-
-	@BeforeEach
-	public void beforeEach() {
-	}
 }
