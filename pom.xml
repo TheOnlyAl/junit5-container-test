@@ -47,7 +47,7 @@
 				<executions>
 					<execution>
 						<id>copy</id>
-						<phase>package</phase>
+						<phase>process-test-resources</phase>
 						<goals>
 							<goal>copy</goal>
 						</goals>
